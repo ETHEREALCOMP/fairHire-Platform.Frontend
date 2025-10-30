@@ -1,3 +1,7 @@
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <footer className="">
+      <p className="">© 2025 FairHire. Чесний найм для всіх.</p>
+    </footer>
+  );
 }
