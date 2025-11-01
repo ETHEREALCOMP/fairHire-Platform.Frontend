@@ -9,7 +9,7 @@ const arimo = Arimo({
   subsets: ['latin', 'cyrillic'],
   weight: '400',
 });
-
+        
 export default function RootLayout({
   children,
 }: Readonly<{
