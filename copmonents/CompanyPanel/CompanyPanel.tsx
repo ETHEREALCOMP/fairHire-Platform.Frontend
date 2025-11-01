@@ -7,7 +7,7 @@ export default function CompanyPanel() {
   return (
     <div>
       <ul
-        className="flex gap-6 mt-6 mb-6 [&_li]:flex [&_li]:gap-3 [&_li]:w-[290px] [&_li]:h-[98px] [&_li]:bg-[#202020] 
+        className="flex gap-6 pt-6 pb-6 [&_li]:flex [&_li]:gap-3 [&_li]:w-[290px] [&_li]:h-[98px] [&_li]:bg-[#202020] 
            [&_li]:border [&_li]:border-[#202020] [&_li]:rounded-2xl 
            [&_li]:p-6 [&_li]:text-[#99a1af] [&_.icon]:flex [&_.icon]:rounded-2xl [&_.icon]:bg-[rgba(93,214,44,0.1)] 
            [&_.icon]:w-12 [&.icon]:h-12 [&_.icon]:justify-center [&_.icon]:items-center [&_p]:text-[#5dd62c]"
