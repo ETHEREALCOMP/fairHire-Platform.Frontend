@@ -1,7 +1,5 @@
-import CandidateList from '@/copmonents/CandidateList/CandidateList';
-import CompanyPanel from '@/copmonents/CompanyPanel/CompanyPanel';
-import Link from 'next/link';
 import { FiPlus } from 'react-icons/fi';
+import CompanyPageClient from './CompanyPage.client';
 
 export default function Company() {
   return (
@@ -20,9 +18,7 @@ export default function Company() {
           <FiPlus size={16} /> Створити вакансію
         </button>
       </div>
-      <Link href="/"> link home</Link>
-      <CompanyPanel />
-      <CandidateList />
+      <CompanyPageClient />
     </div>
   );
 }
