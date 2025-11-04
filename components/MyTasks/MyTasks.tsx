@@ -1,4 +1,3 @@
-// components/MyTasks/MyTasks.tsx
 "use client";
 
 import { useState } from "react";
@@ -56,33 +55,26 @@ export default function MyTasks() {
 
   const getStatusColor = (status: "active" | "completed") => {
     return status === "active"
-      ? "bg-orange-100 text-orange-800 border-orange-200"
-      : "bg-green-100 text-green-800 border-green-200";
-  };
-
-  const getRatingColor = (rating: number) => {
-    if (rating >= 90) return "text-green-600 bg-green-50 border-green-200";
-    if (rating >= 80) return "text-blue-600 bg-blue-50 border-blue-200";
-    if (rating >= 70) return "text-yellow-600 bg-yellow-50 border-yellow-200";
-    return "text-red-600 bg-red-50 border-red-200";
+      ? "bg-[#0F0F0F] text-[#5DD62C] border-[#5DD62C]" // Очікує виконання
+      : "bg-[#0F0F0F] text-[#5DD62C] border-[#5DD62C]"; // Завершене
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+    <div className="bg-[#202020] rounded-2xl shadow-lg p-6 border border-[#202020] w-[810px]">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">Мої завдання</h2>
+        <h2 className="text-base font-normal text-[#F8F8F8]">Мої завдання</h2>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="flex space-x-2 mb-6">
+      {/* Filter Tabs з об'єднаним фоном */}
+      <div className="bg-[#F5F5F5] rounded-full p-1 mb-8 flex w-[220px] h-9">
         {FILTER_TABS.map((tab) => (
           <button
             key={tab}
             onClick={() => setFilter(tab)}
-            className={`px-4 py-2 rounded-lg font-medium transition duration-200 ${
+            className={`flex-1 rounded-full font-medium transition duration-200 text-sm flex items-center justify-center mx-0.5 ${
               filter === tab
-                ? "bg-blue-600 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "bg-white text-[#0F0F0F] shadow-sm"
+                : "text-[#99A1AF] hover:text-[#0F0F0F]"
             }`}
           >
             {tab === "all" ? "Всі" : tab === "active" ? "Активні" : "Завершені"}
@@ -95,33 +87,35 @@ export default function MyTasks() {
         {filteredTasks.map((task) => (
           <div
             key={task.id}
-            className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition duration-200"
+            className="bg-[#0F0F0F] border border-[#0F0F0F] rounded-xl p-4"
           >
-            <div className="flex justify-between items-start mb-3">
+            <div className="flex justify-between items-start mb-2">
               <div className="flex-1">
-                <h3 className="font-semibold text-gray-900 text-lg mb-1">
+                <h3 className="text-base font-normal text-[#F8F8F8] mb-1">
                   {task.title}
                 </h3>
-                <p className="text-gray-600">{task.company}</p>
+                <p className="text-[#99A1AF] text-sm">{task.company}</p>
               </div>
-              {task.rating && (
+
+              {/* Права колонка - оцінка та статус */}
+              <div className="flex flex-col items-end space-y-2">
+                {/* Оцінка з'являється тільки для завершених завдань */}
+                {task.status === "completed" && task.rating && (
+                  <div className="flex items-center px-2 py-1 rounded-lg border border-[#5DD62C] bg-[#0F0F0F] text-[#5DD62C] font-normal">
+                    <span className="text-xs mr-1">Оцінка:</span>
+                    <span className="font-bold">{task.rating}</span>
+                  </div>
+                )}
+
+                {/* Статус */}
                 <div
-                  className={`flex items-center px-3 py-1 rounded-lg border font-medium ${getRatingColor(
-                    task.rating
+                  className={`px-2 py-1 rounded-lg text-xs font-normal border ${getStatusColor(
+                    task.status
                   )}`}
                 >
-                  <span className="text-sm mr-1">Оцінка:</span>
-                  <span className="font-bold">{task.rating}</span>
+                  {getStatusLabel(task.status)}
                 </div>
-              )}
-            </div>
-
-            <div
-              className={`inline-block px-3 py-1 rounded-lg text-sm font-medium ${getStatusColor(
-                task.status
-              )}`}
-            >
-              {getStatusLabel(task.status)}
+              </div>
             </div>
           </div>
         ))}

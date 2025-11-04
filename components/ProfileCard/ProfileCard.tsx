@@ -25,16 +25,16 @@ export default function ProfileCard() {
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+    <div className="bg-[#202020] rounded-2xl p-6 border border-[#202020] w-[390px]">
       {/* Profile Header */}
       <div className="text-center mb-6">
-        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+        <div className="w-20 h-20 bg-[#0F0F0F] rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
           ОП
         </div>
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="font-normal text-base text-[#F8F8F8] mb-2">
           Олексій Петренко
         </h1>
-        <p className="text-gray-600 text-lg">Frontend Developer</p>
+        <p className="text-[#99A1AF] text-sm">Frontend Developer</p>
       </div>
 
       {/* Social Links */}
@@ -42,7 +42,7 @@ export default function ProfileCard() {
         {socialLinks.map((link, index) => (
           <div
             key={index}
-            className="flex items-center text-gray-700 mb-3 last:mb-0"
+            className="flex items-center text-[#99A1AF] mb-3 last:mb-0"
           >
             <span className="w-6 mr-3">{link.icon}</span>
             <span className="text-sm">{link.url}</span>
@@ -51,16 +51,16 @@ export default function ProfileCard() {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-200 my-4"></div>
+      <div className="border-t border-[#99A1AF] my-4"></div>
 
       {/* Skills */}
       <div>
-        <h3 className="font-semibold text-gray-900 mb-3 text-lg">Стек</h3>
+        <h3 className="font-semibold text-[#99A1AF] mb-3 text-lg">Стек</h3>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 px-3 py-2 rounded-lg text-sm font-medium border border-blue-200"
+              className="text-[#5DD62C] px-3 py-2 rounded-lg text-sm font-medium border border-[#5DD62C]"
             >
               {skill}
             </span>

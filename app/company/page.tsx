@@ -1,5 +1,5 @@
-import CandidateList from "@/copmonents/CandidateList/CandidateList";
-import CompanyPanel from "@/copmonents/CompanyPanel/CompanyPanel";
+import CandidateList from "@/components/CandidateList/CandidateList";
+import CompanyPanel from "@/components/CompanyPanel/CompanyPanel";
 import Link from "next/link";
 
 export default function Company() {
