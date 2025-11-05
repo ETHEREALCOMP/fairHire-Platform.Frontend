@@ -20,30 +20,27 @@ export default function LatestFeedback() {
   ];
 
   return (
-    <div className="bg-[#202020] rounded-2xl shadow-lg p-6  border-[#202020] w-[810px]">
-      <h2 className="text-[16px] leading-5 font-normal text-[#F8F8F8] mb-7">
+    <div className="bg-[#202020] rounded-2xl shadow-lg p-4 md:p-6 border border-[#202020] w-full">
+      {" "}
+      <h2 className="text-base md:text-[16px] font-normal text-[#F8F8F8] mb-6">
         Останній фідбек
       </h2>
-
-      <div className="space-y-6">
+      <div className="space-y-4 md:space-y-6">
         {feedbacks.map((feedback, index) => (
           <div
             key={index}
-            className="border-b border-[#333333] pb-6 last:border-0 last:pb-0"
+            className="border-b border-[#333333] pb-4 md:pb-6 last:border-0 last:pb-0"
           >
-            {/* Заголовок категорії та оцінка в одному рядку */}
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="text-[14px] leading-[20px] font-normal text-[#F8F8F8]">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
+              {" "}
+              <h3 className="text-sm md:text-[14px] font-normal text-[#F8F8F8]">
                 {feedback.category}
               </h3>
-
-              {/* Оцінка з правого боку */}
-              <span className="text-[14px] leading-[20px] font-normal text-[#5DD62C]">
+              <span className="text-sm md:text-[14px] font-normal text-[#5DD62C]">
                 {feedback.score}/100
               </span>
             </div>
 
-            {/* Стрічка прогресу */}
             <div className="mb-3">
               <div className="w-full bg-[#202020] rounded-full h-2">
                 <div
@@ -53,8 +50,7 @@ export default function LatestFeedback() {
               </div>
             </div>
 
-            {/* Коментар */}
-            <p className="text-[14px] leading-[20px] font-normal text-[#99A1AF]">
+            <p className="text-[14px] leading-5 font-normal text-[#99A1AF]">
               {feedback.comment}
             </p>
           </div>

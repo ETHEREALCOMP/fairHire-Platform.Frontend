@@ -53,20 +53,13 @@ export default function MyTasks() {
     return status === "active" ? "Очікує виконання" : "Завершене";
   };
 
-  const getStatusColor = (status: "active" | "completed") => {
-    return status === "active"
-      ? "bg-[#0F0F0F] text-[#5DD62C] border-[#5DD62C]" // Очікує виконання
-      : "bg-[#0F0F0F] text-[#5DD62C] border-[#5DD62C]"; // Завершене
-  };
-
   return (
-    <div className="bg-[#202020] rounded-2xl shadow-lg p-6 border border-[#202020] w-[810px]">
+    <div className="bg-[#202020] rounded-2xl shadow-lg p-4 md:p-6 border border-[#202020] w-full">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-base font-normal text-[#F8F8F8]">Мої завдання</h2>
       </div>
 
-      {/* Filter Tabs з об'єднаним фоном */}
-      <div className="bg-[#F5F5F5] rounded-full p-1 mb-8 flex w-[220px] h-9">
+      <div className="bg-[#F5F5F5] rounded-full p-1 mb-6 flex w-full sm:w-[220px] h-9">
         {FILTER_TABS.map((tab) => (
           <button
             key={tab}
@@ -97,9 +90,7 @@ export default function MyTasks() {
                 <p className="text-[#99A1AF] text-sm">{task.company}</p>
               </div>
 
-              {/* Права колонка - оцінка та статус */}
-              <div className="flex flex-col items-end space-y-2">
-                {/* Оцінка з'являється тільки для завершених завдань */}
+              <div className="flex flex-col items-start sm:items-end space-y-2 w-full sm:w-[30%]">
                 {task.status === "completed" && task.rating && (
                   <div className="flex items-center px-2 py-1 rounded-lg border border-[#5DD62C] bg-[#0F0F0F] text-[#5DD62C] font-normal">
                     <span className="text-xs mr-1">Оцінка:</span>
@@ -107,12 +98,7 @@ export default function MyTasks() {
                   </div>
                 )}
 
-                {/* Статус */}
-                <div
-                  className={`px-2 py-1 rounded-lg text-xs font-normal border ${getStatusColor(
-                    task.status
-                  )}`}
-                >
+                <div className="px-2 py-1 rounded-lg text-xs font-normal border border-[#5DD62C] bg-[#0F0F0F] text-[#5DD62C]">
                   {getStatusLabel(task.status)}
                 </div>
               </div>

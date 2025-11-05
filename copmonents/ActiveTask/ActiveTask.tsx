@@ -1,6 +1,8 @@
+import { LuClock, LuPlay } from "react-icons/lu";
+
 export default function ActiveTask() {
   return (
-    <div className="bg-[#202020] rounded-2xl shadow-lg p-6 border border-[#202020]">
+    <div className="bg-[#202020] rounded-2xl shadow-lg p-4 md:p-6 border border-[#202020] w-full">
       <a
         href=""
         className="text-xs text-normal bg-[#5DD62C] hover:bg-green-400 py-1 px-3 rounded-lg ml-3 "
@@ -17,19 +19,7 @@ export default function ActiveTask() {
             <p className="text-[#99A1AF] text-sm mb-4">TechCorp</p>
           </div>
           <span className="flex items-center text-[#99A1AF] text-sm font-medium px-3 py-1 rounded-full">
-            {/* Іконка годинника */}
-            <svg
-              className="w-4 h-4 mr-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                clipRule="evenodd"
-              />
-            </svg>
-            2 дні
+            <LuClock size={16} className="mr-1" />2 дні
           </span>
         </div>
 
@@ -38,9 +28,9 @@ export default function ActiveTask() {
             <span>Прогрес</span>
             <span className="text-green-500">60 %</span>
           </div>
-          <div className="w-full bg-white-200 rounded-full h-3">
+          <div className="w-full bg-gray-700 rounded-full h-3">
             <div
-              className="bg-linear-to-r from-[#171717] to-[#171717] h-3 rounded-full transition-all duration-300"
+              className="bg-[#171717] h-3 rounded-full transition-all duration-300"
               style={{ width: "60%" }}
             ></div>
           </div>
@@ -50,14 +40,7 @@ export default function ActiveTask() {
           className="flex items-center justify-center w-full bg-[#5DD62C] hover:bg-green-400 text-black text-sm font-normal rounded-lg transition duration-200"
           style={{ height: "36px" }}
         >
-          {/* Іконка Play */}
-          <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <LuPlay size={16} className="mr-2" />
           Продовжити
         </button>
       </div>

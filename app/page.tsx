@@ -1,5 +1,5 @@
-import Hero from "@/components/Hero/Hero";
-import HowItWorks from "@/components/HowItWorks/HowItWorks";
+import Hero from "@/copmonents/Hero/Hero";
+import HowItWorks from "@/copmonents/HowItWorks/HowItWorks";
 import Link from "next/link";
 
 export default function HomePage() {
