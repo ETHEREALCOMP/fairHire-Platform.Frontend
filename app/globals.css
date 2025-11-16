@@ -1,8 +1,37 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @layer base {
   button,
   a {
     @apply cursor-pointer;
   }
+}
+body {
+  background-color: #0f0f0f;
+}
+
+/* #202020 gray */
+
+.bg-custom-green {
+  background-color: #5dd62c;
+}
+
+.bg-custom-dark-green {
+  background-color: #337418;
+}
+
+.bg-card-how-it-works {
+  background-color: #202020;
+}
+
+.bg-circle-green-how-it-works {
+  background: #314428;
+}
+
+.fill-icons-how-it-works {
+  fill: #5dd62c;
+}
+
+.stroke-icon-how-it-works {
+  stroke: #5dd62c;
 }
