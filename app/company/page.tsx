@@ -1,5 +1,8 @@
-import { FiPlus } from 'react-icons/fi';
-import CompanyPageClient from './CompanyPage.client';
+import CandidateList from "@/copmonents/CandidateList/CandidateList";
+import CompanyPanel from "@/copmonents/CompanyPanel/CompanyPanel";
+import Link from "next/link";
+import { FiPlus } from "react-icons/fi";
+import CompanyPageClient from "./CompanyPage.client";
 
 export default function Company() {
   return (
