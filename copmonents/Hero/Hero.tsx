@@ -15,7 +15,7 @@ export default function Hero() {
       <ul className="flex justify-center items-center gap-4 pt-6">
         <li>
           <Link
-            href=""
+            href="/sing-up?role=candidate"
             className="rounded-lg py-3 px-4 text-black  bg-custom-green hover:bg-gray-100 transition"
           >
             Я кандидат
@@ -23,7 +23,7 @@ export default function Hero() {
         </li>
         <li>
           <Link
-            href=""
+            href="/sing-up?role=company"
             className="rounded-lg  py-3 px-4  hover:bg-gray-100 bg-custom-dark-green transition"
           >
             Я компанія
