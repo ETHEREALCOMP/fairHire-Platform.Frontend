@@ -1,9 +1,8 @@
-import Footer from "@/copmonents/Footer/Footer";
-import Header from "@/copmonents/Header/Header";
 import React from "react";
 import "./globals.css";
 import { Arimo } from "next/font/google";
-import Container from "@/copmonents/container/container";
+
+import Providers from "./providers";
 
 const arimo = Arimo({
   subsets: ["latin", "cyrillic"],
@@ -12,17 +11,15 @@ const arimo = Arimo({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}:{
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={arimo.className}>
       <body className="bg-black text-white font-arimo text-base font-normal">
-        <Container>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </Container>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
